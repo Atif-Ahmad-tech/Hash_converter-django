@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Hash {% endblock title %}
+    
+{% block extra %}
+    <div class="front container-fluid text-center">
+        <h2><strong>Tools</strong></h2>
+        <h3>Convert any text to Hash using different hash functions</h3>
+    </div>
+{% endblock extra %}
+
+  {% block content %}
+        <div class="container text-center mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <h4 class="page-header" style="white-space:nowrap"><a class="text-decoration-none" href="{% url 'sha256' %}">Sha256 Converter</a></h4>
+                    <div class="row"> 
+                        <div class="col-sm-12 text-muted"> 
+                            Convert text to to Sha256 hash value	
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h4 class="page-header" style="white-space:nowrap"><a class="text-decoration-none" href="{% url 'sha1' %}">Sha1 Converter</a></h4>
+                    <div class="row"> 
+                        <div class="col-sm-12 text-muted"> 
+                            Convert text to to Sha1 hash value	
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h4 class="page-header" style="white-space:nowrap"><a class="text-decoration-none" href="{% url 'md5' %}">Md5 Converter</a></h4>
+                    <div class="row"> 
+                        <div class="col-sm-12 text-muted"> 
+                            Convert text to to Sha256 hash valueL	
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            
+                
+        </div>
+    
+    {% endblock content %}

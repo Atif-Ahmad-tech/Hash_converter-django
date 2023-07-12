@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+    <link href="{% static '/css/style.css' %}" rel="stylesheet">
+{% endblock head %}
+    
+{% block title %} Generate {% endblock title %}
+
+{% block content %}
+  <div class="container-fluid main d-flex justify-content-center mb-5">
+    <div class="container ps-lg-5 ms-lg-5">
+        <h2 class="mb-5 ">{% block MediaTitle %}{% endblock MediaTitle %}</h2>
+        <div class="row">
+            <div class="col-6 ">
+                <p >Enter text</p>
+            <form action="" method="post" > {% csrf_token %}
+                <textarea minlength="2" name="text" id="myTextarea" cols="30" rows="10"></textarea>
+                <button type="submit" id="submitButton" class=" btn btn-info mt-2  mb-2">generate</button>
+            </form>
+            </div>
+            <div class="col-6 ">
+                <p class="text-center">Hash value</p>
+                <textarea name="text" id="" cols="30" rows="10">{% block HashVal %}{% endblock HashVal %}</textarea>
+            </div>
+        </div>
+    </div>
+  </div>
+  <hr style="width: 80%; margin: auto;" >
+  <div class="row mt-2">
+        <div class="col-lg-8 ps-5">
+            <div class=" mb-4 bg-body-tertiary rounded-3">
+                <div class="container-fluid py-5">
+                  <h1 class="display-5 fw-bold">{% block MediaName %} {% endblock MediaName %}</h1>
+                  <hr style="width: 40%;">
+                  <p>{% block description %}{% endblock description %}
+                    </p>
+
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4"></div>
+      
+    
+  </div>
+  
+  {% block script %}
+    <script>
+
+    </script>
+  {% endblock script %}
+    
+{% endblock content %}
+    
+    
