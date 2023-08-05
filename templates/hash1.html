@@ -16,13 +16,13 @@
             <div class="col-6 ">
                 <p >Enter text</p>
             <form action="" method="post" > {% csrf_token %}
-                <textarea minlength="2" name="text" id="myTextarea" cols="30" rows="10"></textarea>
-                <button type="submit" id="submitButton" class=" btn btn-info mt-2  mb-2">generate</button>
+                <textarea minlength="2" class="textarea" name="text" id="myTextarea" cols="30" rows="10">{{text}}</textarea>
+                <button class='glowing-btn mt-4'><span class='glowing-txt'>G<span class='faulty-letter'>e</span>nerate</span></button>
             </form>
             </div>
             <div class="col-6 ">
                 <p class="text-center">Hash value</p>
-                <textarea name="text" id="" cols="30" rows="10">{% block HashVal %}{% endblock HashVal %}</textarea>
+                <textarea  class="textarea"  id="" cols="30" rows="10">{% block HashVal %}{% endblock HashVal %}</textarea>
             </div>
         </div>
     </div>
@@ -44,12 +44,10 @@
       
     
   </div>
-  
   {% block script %}
-    <script>
-
-    </script>
+    
   {% endblock script %}
+
     
 {% endblock content %}
     
